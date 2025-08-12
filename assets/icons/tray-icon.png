@@ -1,0 +1,4 @@
+# This is a placeholder for the system tray icon
+# In a real implementation, you would create a proper PNG icon file
+# Recommended size: 16x16 or 32x32 pixels
+# Should be a simple, recognizable icon for the system tray 
