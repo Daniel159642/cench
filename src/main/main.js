@@ -25,6 +25,7 @@ async function initializeDatabase() {
 }
 
 function createOverlayWindow() {
+  const appRoot = path.join(__dirname, '..');
   overlayWindow = new BrowserWindow({
     width: 420,
     height: 600,
@@ -45,16 +46,16 @@ function createOverlayWindow() {
       enableRemoteModule: false,
       preload: path.join(__dirname, 'preload.js')
     },
-    icon: path.join(__dirname, '../../assets/icons/icon.png')
+    icon: path.join(appRoot, 'assets/icons/icon.png')
   });
 
   // Load React app
-  const isDev = process.env.NODE_ENV === 'development' || process.env.ELECTRON_IS_DEV;
+  const isDev = process.env.NODE_ENV === 'development' || process.env.ELECTRON_IS_DEV || !app.isPackaged;
   if (isDev) {
     overlayWindow.loadURL('http://localhost:3000');
     overlayWindow.webContents.openDevTools();
   } else {
-    overlayWindow.loadFile(path.join(__dirname, '../../dist/index.html'));
+    overlayWindow.loadFile(path.join(appRoot, 'dist/index.html'));
   }
 
   // Show window in development mode
@@ -142,13 +143,14 @@ function createOverlayWindow() {
 }
 
 function createTray() {
+  const appRoot = path.join(__dirname, '..');
   let iconPath;
   try {
-    iconPath = path.join(__dirname, '../../assets/icons/tray-icon.png');
+    iconPath = path.join(appRoot, 'assets/icons/tray-icon.png');
     // Check if icon exists, use default if not
     if (!fs.existsSync(iconPath)) {
       console.log('Tray icon not found, using default');
-      iconPath = path.join(__dirname, '../../assets/icons/icon.png');
+      iconPath = path.join(appRoot, 'assets/icons/icon.png');
       if (!fs.existsSync(iconPath)) {
         // Create a simple default icon or use system default
         iconPath = null;
@@ -266,6 +268,26 @@ ipcMain.handle('davinci:check', async () => {
 ipcMain.handle('davinci:execute', async (event, code) => {
   try {
     const pythonScript = path.join(__dirname, '../python-scripts/davinci_execute.py');
+    const result = await executePythonScript(pythonScript, [code]);
+    return result;
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+});
+
+ipcMain.handle('aftereffects:check', async () => {
+  try {
+    const pythonScript = path.join(__dirname, '../python-scripts/aftereffects_execute.py');
+    const result = await executePythonScript(pythonScript, ['--check']);
+    return { connected: result.success, message: result.message };
+  } catch (error) {
+    return { connected: false, message: error.message };
+  }
+});
+
+ipcMain.handle('aftereffects:execute', async (event, code) => {
+  try {
+    const pythonScript = path.join(__dirname, '../python-scripts/aftereffects_execute.py');
     const result = await executePythonScript(pythonScript, [code]);
     return result;
   } catch (error) {

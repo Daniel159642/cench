@@ -11,6 +11,7 @@ const ChatOverlay = ({ onOpenSettings, onClose }) => {
     sendMessage,
     executeCode,
     daVinciConnected,
+    afterEffectsConnected,
     openAIConfigured,
     setMessages,
     setIsLoading

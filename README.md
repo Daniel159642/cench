@@ -1,6 +1,11 @@
-# Cench AI - DaVinci Resolve Assistant
+# Cench AI - Creative Software Assistant
 
-An AI-powered desktop assistant that helps you edit videos in DaVinci Resolve using natural language commands. Cench AI runs as a floating overlay application, similar to how Cluely works with other software.
+An AI-powered desktop assistant that helps you with creative software using natural language commands. Cench AI currently supports:
+
+- **DaVinci Resolve** - Video editing and color grading
+- **Adobe After Effects** - Motion graphics and compositing
+
+Cench AI runs as a floating overlay application, similar to how Cluely works with other software.
 
 ## Features
 
@@ -19,6 +24,7 @@ Before installing Cench AI, make sure you have:
 - **Node.js 18+** - [Download here](https://nodejs.org/)
 - **Python 3.8+** - [Download here](https://python.org/)
 - **DaVinci Resolve 18+** - [Download here](https://www.blackmagicdesign.com/products/davinciresolve)
+- **Adobe After Effects 2020+** - [Download here](https://www.adobe.com/products/aftereffects.html)
 - **OpenAI API Key** - [Get one here](https://platform.openai.com/api-keys)
 
 ## Installation
@@ -70,40 +76,46 @@ Before installing Cench AI, make sure you have:
    - Enter your OpenAI API key
    - Click "Save Settings"
 
-3. **Test DaVinci Connection**
+3. **Test Software Connections**
    - In settings, click "Test DaVinci Resolve Connection"
-   - Make sure DaVinci Resolve is running
+   - Click "Test After Effects Connection"
+   - Make sure both applications are running
 
-4. **Start Editing!**
+4. **Start Creating!**
    - Type natural language commands like:
-     - "Add a new video track"
-     - "Speed up this clip to 2x"
-     - "Add a cross dissolve transition"
+     - **DaVinci Resolve**: "Add a new video track", "Speed up this clip to 2x"
+     - **After Effects**: "Create a new composition", "Add a text layer", "Apply a blur effect"
 
 ## Usage Examples
 
-### Basic Editing Commands
+### DaVinci Resolve Commands
 ```
 "Add a new video track"
 "Create a new timeline called Main Edit"
 "Import the video files from my desktop"
 "Add a title that says Opening Scene"
-```
-
-### Timeline Operations
-```
 "Delete the selected clips"
 "Add a cross dissolve between these clips"
 "Make this clip play at half speed"
 "Create a new audio track"
-```
-
-### Effects and Transitions
-```
 "Add a fade to black transition"
 "Apply a color correction preset"
 "Add a blur effect to this clip"
 "Create a picture-in-picture effect"
+```
+
+### After Effects Commands
+```
+"Create a new composition called Main Comp"
+"Import the video file from my desktop"
+"Add a text layer saying Hello World"
+"Apply a blur effect to the layer"
+"Move the layer to the center"
+"Add a keyframe at 2 seconds"
+"Set the layer to 50% opacity"
+"Create a red solid layer"
+"Add a wiggle expression to position"
+"Create a new adjustment layer"
 ```
 
 ## Configuration

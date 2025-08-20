@@ -56,6 +56,15 @@ const SettingsPanel = ({ onClose }) => {
     }
   };
 
+  const testAfterEffectsConnection = async () => {
+    try {
+      const result = await window.electronAPI.checkAfterEffectsConnection();
+      alert(result.connected ? 'After Effects connected!' : `Connection failed: ${result.message}`);
+    } catch (error) {
+      alert(`Connection test failed: ${error.message}`);
+    }
+  };
+
   return (
     <div className="settings-overlay">
       <div className="settings-panel">
@@ -122,6 +131,17 @@ const SettingsPanel = ({ onClose }) => {
               </button>
               <p className="setting-help">
                 Make sure DaVinci Resolve is running and accessible
+              </p>
+            </div>
+            <div className="connection-test">
+              <button 
+                className="test-btn"
+                onClick={testAfterEffectsConnection}
+              >
+                Test After Effects Connection
+              </button>
+              <p className="setting-help">
+                Make sure After Effects is running and accessible
               </p>
             </div>
           </div>

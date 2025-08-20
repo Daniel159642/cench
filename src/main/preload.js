@@ -16,6 +16,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   executeDaVinciCommand: (code) => ipcRenderer.invoke('davinci:execute', code),
   checkDaVinciConnection: () => ipcRenderer.invoke('davinci:check'),
   
+  // After Effects integration
+  executeAfterEffectsCommand: (code) => ipcRenderer.invoke('aftereffects:execute', code),
+  checkAfterEffectsConnection: () => ipcRenderer.invoke('aftereffects:check'),
+  
   // Database operations
   queryCommands: (query, params) => ipcRenderer.invoke('db:query', query, params),
   

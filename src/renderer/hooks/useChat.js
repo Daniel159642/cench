@@ -4,6 +4,7 @@ export const useChat = () => {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [daVinciConnected, setDaVinciConnected] = useState(false);
+  const [afterEffectsConnected, setAfterEffectsConnected] = useState(false);
   const [openAIConfigured, setOpenAIConfigured] = useState(false);
 
   // Check connections on mount
@@ -18,6 +19,14 @@ export const useChat = () => {
     } catch (error) {
       console.error('DaVinci connection check failed:', error);
       setDaVinciConnected(false);
+    }
+    
+    try {
+      const afterEffectsStatus = await window.electronAPI.checkAfterEffectsConnection();
+      setAfterEffectsConnected(afterEffectsStatus.connected);
+    } catch (error) {
+      console.error('After Effects connection check failed:', error);
+      setAfterEffectsConnected(false);
     }
     
     // For testing purposes, always set OpenAI as configured since we're using mock responses
@@ -108,6 +117,7 @@ export const useChat = () => {
     executeCode,
     clearMessages,
     daVinciConnected,
+    afterEffectsConnected,
     openAIConfigured,
     checkConnections,
     setMessages,
