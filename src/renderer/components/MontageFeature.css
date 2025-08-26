@@ -1,0 +1,476 @@
+.montage-feature {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.montage-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.montage-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.back-button {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #495057;
+}
+
+.back-button:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.montage-content {
+  min-height: 600px;
+}
+
+.montage-step {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.montage-step h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.montage-step p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Drop Zone Styles */
+.drop-zone {
+  border: 3px dashed #4CAF50;
+  border-radius: 20px;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #f8fff8 0%, #f0f8f0 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.drop-zone:hover {
+  border-color: #45a049;
+  background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+}
+
+.drop-zone-content {
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.drop-zone-content p {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.upload-hint {
+  font-size: 1rem !important;
+  color: #888 !important;
+  margin-top: 10px;
+}
+
+/* Photo Grid Styles */
+.photo-grid {
+  margin-top: 30px;
+}
+
+.photo-grid h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.photos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.photo-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+  transform: scale(1.05);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.remove-photo {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.remove-photo:hover {
+  background: rgba(255, 0, 0, 1);
+}
+
+/* Music Selection Styles */
+.music-section {
+  margin-bottom: 40px;
+}
+
+.music-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.music-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.music-item:hover {
+  border-color: #4CAF50;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15);
+}
+
+.music-item.selected {
+  border-color: #4CAF50;
+  background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+}
+
+.music-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.music-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.music-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.custom-music {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #4CAF50;
+  border-radius: 12px;
+  background: #f8fff8;
+}
+
+.custom-music-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.selected-music {
+  color: #4CAF50;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Progress Circle Styles */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.progress-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.progress-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+}
+
+.progress-ring circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+.progress-label {
+  display: block;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Building Steps Styles */
+.building-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.step.completed {
+  background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+  border-color: #4CAF50;
+  color: #2e7d32;
+}
+
+.step-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+/* Complete Step Styles */
+.complete-container {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.montage-preview {
+  margin: 30px 0;
+}
+
+.preview-placeholder {
+  width: 400px;
+  height: 250px;
+  border: 3px dashed #4CAF50;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fff8;
+  margin: 0 auto;
+}
+
+.preview-placeholder span {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.preview-placeholder p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.download-button, .share-button, .new-montage-button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-button {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.download-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.share-button {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+}
+
+.share-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+}
+
+.new-montage-button {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  color: white;
+}
+
+.new-montage-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+}
+
+/* Navigation Buttons */
+.next-button {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.next-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.step-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .montage-feature {
+    padding: 10px;
+  }
+  
+  .montage-header h1 {
+    font-size: 2rem;
+  }
+  
+  .drop-zone {
+    padding: 40px 20px;
+  }
+  
+  .photos-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .music-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .preview-placeholder {
+    width: 100%;
+    max-width: 350px;
+  }
+}

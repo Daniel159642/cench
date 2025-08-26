@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ChatOverlay from './components/ChatOverlay';
 import SettingsPanel from './components/SettingsPanel';
+import MontageFeature from './components/MontageFeature';
 import logoImage from '../logo.png';
 import fileIcon from '../file-icon.png';
 
 const App = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [showChat, setShowChat] = useState(true);
+  const [showMontage, setShowMontage] = useState(false);
 
   useEffect(() => {
     // Listen for settings open event from main process
@@ -21,6 +23,14 @@ const App = () => {
     return (
       <SettingsPanel 
         onClose={() => setShowSettings(false)}
+      />
+    );
+  }
+
+  if (showMontage) {
+    return (
+      <MontageFeature 
+        onBack={() => setShowMontage(false)}
       />
     );
   }
@@ -67,6 +77,10 @@ const App = () => {
           <div className="action-container" onClick={() => setShowChat(true)}>
             <div className="action-icon">+</div>
             <h3>New Chat</h3>
+          </div>
+          <div className="action-container" onClick={() => setShowMontage(true)}>
+            <div className="action-icon">🎬</div>
+            <h3>Montage</h3>
           </div>
         </div>
       </div>
